@@ -5,9 +5,9 @@ LABEL "com.github.actions.description"="A static analysis tool for finding error
 LABEL "com.github.actions.icon"="check"
 LABEL "com.github.actions.color"="blue"
 
-LABEL "repository"="http://github.com/mickaelandrieu/psalm-ga"
-LABEL "homepage"="http://github.com/actions"
-LABEL "maintainer"="Mickaël Andrieu <mickael.andrieu@prestashop.com>"
+LABEL "repository"="https://github.com/opsway/actions"
+LABEL "homepage"="https://opsway.github.io/actions"
+LABEL "maintainer"="OpsWay <start@opsway.com>"
 
 #
 # Updated version of phpqa/psalm Docker image.
