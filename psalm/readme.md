@@ -12,8 +12,7 @@ workflow "Main" {
 }
 
 action "Psalm" {
-  uses = "docker://mickaelandrieu/psalm-ga"
-  secrets = ["GITHUB_TOKEN"]
+  uses = "docker://quay.io/opsway/actions:psalm"
 }
 ```
 
@@ -25,19 +24,7 @@ workflow "Main" {
 }
 
 action "Psalm" {
-  uses = "docker://mickaelandrieu/psalm-ga"
-  secrets = ["GITHUB_TOKEN"]
-+  args = "--find-dead-code --threads=8 --diff --diff-methods"
+  uses = "docker://quay.io/opsway/actions:psalm"
++  args = "--show-info=false --threads=4"
 }
 ```
-
-**You can copy/paste the .github folder (under examples/) to your project and thats all!**
-
-## Docker
-
-A Docker-Image is built automatically and located here:
-https://cloud.docker.com/u/mickaelandrieu/repository/docker/mickaelandrieu/psalm-ga
-
-You can run it in any given directory like this:
-
-`docker run --rm -it -w=/app -v ${PWD}:/app mickaelandrieu/psalm-ga:latest`
