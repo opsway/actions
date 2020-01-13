@@ -1,4 +1,4 @@
-FROM php:7.3-alpine
+FROM php:7.4-alpine
 
 LABEL "com.github.actions.name"="Psalm - Code quality tool for PHP"
 LABEL "com.github.actions.description"="A static analysis tool for finding errors in PHP applications"
@@ -17,10 +17,10 @@ LABEL "maintainer"="Mickaël Andrieu <mickael.andrieu@prestashop.com>"
 
 RUN apk add --no-cache tini
 
-COPY --from=composer:1.8 /usr/bin/composer /usr/bin/composer
+COPY --from=composer:1.9 /usr/bin/composer /usr/bin/composer
 RUN COMPOSER_ALLOW_SUPERUSER=1 \
     COMPOSER_HOME="/composer" \
-    composer global require --prefer-dist --no-progress --dev vimeo/psalm:3.0.12
+    composer global require --prefer-dist --no-progress --dev vimeo/psalm:3.8.2
 
 ENV PATH /composer/vendor/bin:${PATH}
 
