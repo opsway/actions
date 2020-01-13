@@ -6,7 +6,7 @@ if [ "$(printf %c "$1")" = '-' ]; then
 elif [ "$1" = "/composer/vendor/bin/psalm" ]; then
   set -- /sbin/tini -- php "$@"
 elif [ "$1" = "psalm" ]; then
-  set -- /sbin/tini -- php /composer/vendor/bin/"$@"
+  set -- /sbin/tini -- php /composer/vendor/bin/"$*"
 fi
 
 exec "$@"
