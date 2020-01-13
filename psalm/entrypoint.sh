@@ -1,5 +1,6 @@
 #!/usr/bin/env sh
-set -e
+
+set -o errexit
 
 if [ "$(printf %c "$1")" = '-' ]; then
   set -- /sbin/tini -- php /composer/vendor/bin/psalm "$@"
